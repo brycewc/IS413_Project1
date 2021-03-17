@@ -11,12 +11,14 @@ namespace IS413_Project1.Models
     {
         [Key]
         public int TourGroupId { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Tour Name is required")]
         public string TourName { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Tour Size is required")]
         public int TourSize { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Email Address is required")]
+        [EmailAddress]
         public string Email { get; set; }
+        [Phone(ErrorMessage = "Please enter a valid phone number XXX-XXX-XXXX")]
         public string PhoneNumber { get; set; }
         public string TourTime { get; set; }
     }

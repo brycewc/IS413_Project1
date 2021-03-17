@@ -71,7 +71,6 @@ namespace IS413_Project1.Controllers
         public IActionResult SignUp(IFormCollection form)
         {
                 GroupTime = form["time"];
-                Times.Remove(Convert.ToDateTime(GroupTime));
                 return View("Form", new TourListViewModel { TourGroup = new TourGroup(), Time = form["time"] });
         }
         // Post action from the form of adding a group to a tour time. Passes in the tour time and adds, then saves the group information attached to that tour time.
@@ -82,12 +81,13 @@ namespace IS413_Project1.Controllers
             {
                 t.TourGroup.TourTime = GroupTime;
                 context.Group.Add(t.TourGroup);
+                Times.Remove(Convert.ToDateTime(GroupTime));
                 context.SaveChanges();
                 return View("ViewApps", context.Group);
             }
             else
             {
-                return View();
+                return View(new TourListViewModel { TourGroup = new TourGroup(), Time = GroupTime });
             }
         }
         // View Appointments action. Passes the group information from the context model file.
