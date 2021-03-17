@@ -1,0 +1,32 @@
+﻿<!--This page contains the form used to gather data about the group who is requesting a tour-->
+@model TourListViewModel
+
+<div class="container">
+    <form asp-action="Form" method="post">
+        <div class="form-group">
+            <input id="TourGroupTime" name="TourGroupTime" placeholder="@Model.Time" value="@Model.Time" class="form-control" disabled />
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.TourGroup.TourName">Name of TourGroup</label>
+            <input asp-for="@Model.TourGroup.TourName" class="form-control" />
+            <span class="text-danger" asp-validation-for="@Model.TourGroup.TourName"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.TourGroup.TourSize">Size of TourGroup</label>
+            <input asp-for="@Model.TourGroup.TourSize" class="form-control" />
+            <span class="text-danger" asp-validation-for="@Model.TourGroup.TourSize"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.TourGroup.Email">Email Address</label>
+            <input asp-for="@Model.TourGroup.Email" class="form-control" />
+            <span class="text-danger" asp-validation-for="@Model.TourGroup.Email"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.TourGroup.PhoneNumber">Phone Number</label>
+            <input asp-for="@Model.TourGroup.PhoneNumber" class="form-control" />
+            <span class="text-danger" asp-validation-for="@Model.TourGroup.PhoneNumber"></span>
+        </div>
+
+        <button type="submit" value="submit" class="btn btn-primary">Reserve</button>
+    </form>
+</div>

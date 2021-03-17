@@ -1,0 +1,21 @@
+﻿@model IEnumerable<DateTime>
+@* Tour Time Sign up page. Displays each time that a user can select for a tour. *@
+
+<div class="container">
+    <form asp-action="SignUp" method="post">
+        <div class="row g-3 form-group">
+            <div class="col-sm">
+                <label for="time">Select the date: </label>
+                <select id="time" name="time" class="form-select">
+                    @foreach (var x in Model)
+                    {
+                        <option value="@x">@x</option>
+                    }
+                </select>
+            </div>
+            <div class="col-sm">
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

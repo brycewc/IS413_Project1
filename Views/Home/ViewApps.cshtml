@@ -1,0 +1,26 @@
+﻿<!-- This page shows the appointments that have been scheduled-->
+@model IEnumerable<TourGroup>
+
+<table class="table table-bordered" table-hover>
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Tour Time</th>
+            <th scope="col">Group Name</th>
+            <th scope="col">Group Size</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.TourTime</td>
+                <td>@x.TourName</td>
+                <td>@x.TourSize</td>
+                <td>@x.Email</td>
+                <td>@x.PhoneNumber</td>
+            </tr>
+        }
+        </tbody>
+</table>
