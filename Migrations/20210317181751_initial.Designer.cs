@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IS413_Project1.Migrations
 {
     [DbContext(typeof(TourDbContext))]
-    [Migration("20210317032502_initial")]
+    [Migration("20210317181751_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
